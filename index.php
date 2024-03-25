@@ -13,7 +13,7 @@ echo"AOBA!PRIMEIRO SISTEMINHA UTIL EM PHP QUE CRIO" . PHP_EOL;
         
 
 $diretorio = 'c:\Users\Controlcar\Desktop\AJUSTADOR_IMG\ajustar'; //coloque o seu caminho aqui, des do C:// (ou semelhantes) até a pasta "ajustar"
-$diretorio_redimensionadas = 'c:\Users\Controlcar\Desktop\AJUSTADOR_IMG\ajustar\redimensionadas';
+$diretorio_redimensionadas = 'c:\Users\Controlcar\Desktop\AJUSTADOR_IMG\redimensionadas';
 
 // Verifica se o diretório para as imagens redimensionadas existe, se não, cria
 if (!is_dir($diretorio_redimensionadas)) {
@@ -23,7 +23,7 @@ if (!is_dir($diretorio_redimensionadas)) {
 
 $imagens = scandir($diretorio);
 
-foreach ($imagens as $imagem) {
+foreach($imagens as $imagem) {
     if ($imagem != '.' && $imagem != '..') {
         $caminho_imagem_original = $diretorio . DIRECTORY_SEPARATOR . $imagem;
         echo $caminho_imagem_original . PHP_EOL;
@@ -61,7 +61,7 @@ foreach ($imagens as $imagem) {
 
                 echo "A imagem foi carregada com sucesso.";
             } else {
-                echo "Falha ao carregar a imagem.";
+                echo "Falha ao criar a imagem.";
             }
         } else {
             echo "O arquivo não é uma imagem válida: $caminho_imagem_original";
