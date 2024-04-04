@@ -6,12 +6,13 @@ def resize_images(input_dir, output_dir, width, height):
         os.makedirs(output_dir)
 
     for filename in os.listdir(input_dir):
-        if filename.endswith(('.jpg', '.jpeg', '.png', '.gif')):
+        if filename.endswith(('.jpg', '.JPG' '.jpeg', '.png', '.gif')):
             with Image.open(os.path.join(input_dir, filename)) as img:
                 resized_img = img.resize((width, height))
                 resized_img.save(os.path.join(output_dir, filename))
+                print(F"{filename} saved")
 
-input_directory = 'c:/Users/Controlcar/Desktop/AJUSTADOR_IMG/ajustar'
+input_directory = 'C:/Users/Controlcar/Desktop/AJUSTADOR_IMG/ajustar'
 output_directory = 'c:/Users/Controlcar/Desktop/AJUSTADOR_IMG/resized_images'
 
 new_width = 500
