@@ -6,7 +6,7 @@ def resize_images(input_dir, output_dir, width, height):
         os.makedirs(output_dir)
 
     for filename in os.listdir(input_dir):
-        if filename.endswith(('.jpg', '.JPG' '.jpeg', '.png', '.gif')):
+        if filename.endswith(('.jpg', '.JPG', '.jpeg', '.png', '.gif')):
             with Image.open(os.path.join(input_dir, filename)) as img:
                 resized_img = img.resize((width, height))
                 resized_img.save(os.path.join(output_dir, filename))
